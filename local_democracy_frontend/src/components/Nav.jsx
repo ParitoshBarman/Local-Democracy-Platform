@@ -11,7 +11,8 @@ import { Icon, Text } from "@chakra-ui/react";
     FiMessageCircle,
     FiBarChart2,
     FiUsers,
-    FiCalendar
+    FiCalendar,
+    FiPieChart
   } from "react-icons/fi";
   
 
@@ -25,6 +26,7 @@ const Nav = (props) => {
     { icon: <FiBarChart2 />, path: "/impact", label: "Impact" },
     { icon: <FiUsers />, path: "/stories", label: "Stories" },
     { icon: <FiCalendar />, path: "/initiatives", label: "Initiatives" },
+    { icon: <FiPieChart />, path: "/voting-results", label: "Voting Results" },
   ];
 
   return (

@@ -67,44 +67,50 @@ const Feedback = () => {
       >
         <Stack spacing={4}>
           
-            
+            <label htmlFor="name">Name</label>
             <Input
               name="name"
               value={formData.name}
               onChange={handleChange}
               placeholder="John Doe"
+              id="name"
             />
           
 
           
-            
+            <label htmlFor="email">Email</label>
             <Input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="you@example.com"
+              id="email"
             />
           
             
-            {/* <Select
+            <label htmlFor="issue">Choose Issue</label>
+            <select
               name="category"
               value={formData.category}
               onChange={handleChange}
               placeholder="Select category"
+              id="issue"
+              style={{border:'1px solid gray', borderRadius:'4px'}}
             >
               <option value="App Issue">App Issue</option>
               <option value="Suggestion">Suggestion</option>
               <option value="Other">Other</option>
-            </Select> */}
+            </select>
           
-            
+            <label htmlFor="message">Message</label>
             <Textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
               placeholder="Write your feedback here..."
               rows={5}
+              id="message"
             />
           
 
