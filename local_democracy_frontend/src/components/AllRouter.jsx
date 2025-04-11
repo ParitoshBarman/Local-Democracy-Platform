@@ -7,6 +7,7 @@ import Voting from "../pages/Voting";
 import Feedback from "../pages/Feedback";
 import Impact from "../pages/Impact";
 import Stories from "../pages/Stories";
+import Initiatives from '../pages/Initiatives';
 
 const AllRouter = () => {
   return (
@@ -18,7 +19,7 @@ const AllRouter = () => {
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/impact" element={<Impact />} />
       <Route path="/stories" element={<Stories />} />
-      <Route path="/initiatives" element={<Stories />} />
+      <Route path="/initiatives" element={<Initiatives />} />
     </Routes>    
   )
 }

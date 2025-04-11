@@ -50,18 +50,11 @@ export default function Laws() {
 
       {/* Search & Filter Section */}
       <Stack direction={{ base: "column", md: "row" }} spacing={4} mb={6}>
-        <Input placeholder="Search proposals..." />
-        <FilterBar></FilterBar>
-        <FilterBar></FilterBar>
-        {/* <Select placeholder="Filter by Status">
-          <option value="Proposed">Proposed</option>
-          <option value="Under Review">Under Review</option>
-          <option value="Approved">Approved</option>
-        </Select> */}
+        <FilterBar/>
       </Stack>
 
       {/* Laws/Proposals Grid */}
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5} gap={{base:4, md:8}}>
         {lawsData.map((law) => (
           <Card.Root key={law.id} borderWidth="1px" borderRadius="md">
             <CardHeader>
