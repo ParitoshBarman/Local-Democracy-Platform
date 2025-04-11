@@ -45,7 +45,7 @@ const Sidebar = () => {
               changeNavSize("small")
           }}
           >
-          <FiMenu/>
+          <FiMenu color='black'/>
           </IconButton>
         </Flex>
 
