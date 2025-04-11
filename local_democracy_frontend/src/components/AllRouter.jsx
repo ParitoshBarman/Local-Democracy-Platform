@@ -18,6 +18,7 @@ const AllRouter = () => {
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/impact" element={<Impact />} />
       <Route path="/stories" element={<Stories />} />
+      <Route path="/initiatives" element={<Stories />} />
     </Routes>    
   )
 }

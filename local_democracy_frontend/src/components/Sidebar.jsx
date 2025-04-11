@@ -6,10 +6,8 @@ import {
   Avatar,
   Heading
 } from '@chakra-ui/react'
-import { FiMenu } from "react-icons/fi";
-import { LuSearch } from "react-icons/lu"
-
-
+import {FiMenu} from 'react-icons/fi'
+import Nav from './Nav'
 
 const Sidebar = () => {
   const [navSize, changeNavSize] = useState("large")
@@ -18,13 +16,15 @@ const Sidebar = () => {
       <Flex
         pos="sticky"
         left="5"
-        h="95vh"
+        minH="95vh"
         marginTop="2.5vh"
         boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
         borderRadius={navSize == "small" ? "15px" : "30px"}
         w={navSize == "small" ? "75px" : "200px"}
         flexDir="column"
         justifyContent="space-between"
+        onMouseEnter={()=>changeNavSize("large")}
+        onMouseLeave={()=>changeNavSize("small")}
       >
         <Flex
           p="5%"
@@ -37,16 +37,19 @@ const Sidebar = () => {
             background="none"
             mt={5}
             _hover={{ background: 'none' }}
-            
+
             onClick={() => {
               if (navSize == "small")
                 changeNavSize("large")
               else
-              changeNavSize("small")
-          }}
+                changeNavSize("small")
+            }}
           >
-          <FiMenu color='black'/>
+            <FiMenu color='black' />
           </IconButton>
+
+<Nav navSize={navSize}/>
+          
         </Flex>
 
         <Flex
