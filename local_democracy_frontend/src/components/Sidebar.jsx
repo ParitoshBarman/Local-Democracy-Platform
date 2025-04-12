@@ -4,7 +4,7 @@ import {
   Text,
   IconButton,
   Avatar,
-  Heading
+  Heading, useBreakpointValue 
 } from '@chakra-ui/react'
 import {FiMenu} from 'react-icons/fi'
 import Nav from './Nav'
@@ -16,7 +16,7 @@ const Sidebar = () => {
 
 
   const [navSize, changeNavSize] = useState(defaultNavSize || "large")
-  
+
   return (
     <>
       <Flex
