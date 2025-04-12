@@ -126,7 +126,6 @@ const StoryCard = ({ name, story }) => (
     <HStack mb={2}>
       <Avatar.Root>
         <Avatar.Fallback name={name} />
-        <Avatar.Image src="https://bit.ly/sage-adebayo" />
       </Avatar.Root>
       <Text fontWeight="bold">{name}</Text>
     </HStack>

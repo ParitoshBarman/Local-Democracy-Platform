@@ -21,12 +21,12 @@ const Header = () => {
 
         <HStack spacing={4}>
           <Text fontSize="md" fontWeight="medium" color="gray.700">
-            Hello, Segun Adebayo
+            Hello, Paritosh Barman
           </Text>
           <Menu.Root>
             <Menu.Trigger asChild>
               <Avatar.Root>
-                <Avatar.Fallback name="Segun Adebayo" />
+                <Avatar.Fallback name="Paritosh Barman" />
                 <Avatar.Image src="https://bit.ly/sage-adebayo" />
               </Avatar.Root>
             </Menu.Trigger>
