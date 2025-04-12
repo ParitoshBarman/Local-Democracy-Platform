@@ -135,6 +135,7 @@ Allow CORS and correctly.
 
 ### 🏠 Dashboard
 ![Dashboard Screenshot](screenshots\Screenshot (116).png)
+<img src="screenshots\Screenshot (116).png" alt="Dashboard Screenshot">
 
 ### 🔔 Notifications
 ![Notifications Screenshot](./screenshots/Screenshot (116).png)
