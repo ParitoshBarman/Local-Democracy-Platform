@@ -98,8 +98,8 @@ Local-Democracy-Platform/
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │
-├── public/
-│   └── index.html
+├── ├── index.html
+
 ```
 
 ---
