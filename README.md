@@ -98,27 +98,29 @@ local-democracy/
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/your-username/local-democracy.git
-cd local-democracy
+git clone https://github.com/ParitoshBarman/Local-Democracy-Platform.git
+
 ```
 
 2. **Start the Backend**
 
 ```bash
-cd backend
+cd local_democracy_backend
 npm install
 node index.js
+npm run dev
 ```
 
 3. **Start the Frontend**
 
 ```bash
-cd frontend
+cd local_democracy_frontend
 npm install
 npm start
+npm run dev
 ```
 
-Make sure to allow CORS and set environment variables correctly for production deployment.
+Allow CORS and correctly.
 
 ---
 
