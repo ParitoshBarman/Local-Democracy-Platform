@@ -12,10 +12,12 @@ import {
   Progress,
   Icon,
 } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
 import { FiBell, FiFileText, FiThumbsUp, FiActivity, FiUsers } from "react-icons/fi";
 
 const Dashboard = () => {
+  const notificationState = useSelector((state)=>state.notification)
   return (
     <Box p={6} bg={"gray.50"} minH="100vh">
       {/* Welcome Section */}
@@ -26,7 +28,7 @@ const Dashboard = () => {
 
       {/* Stats Cards */}
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mb={6} gap={{base:4, md:8}}>
-        <StatCard icon={FiBell} label="Notifications" number="8" />
+        <StatCard icon={FiBell} label="Notifications" number={notificationState.length} />
         <StatCard icon={FiFileText} label="Active Laws" number="5" />
         <StatCard icon={FiThumbsUp} label="Votes Remaining" number="2" />
       </SimpleGrid>
@@ -35,8 +37,12 @@ const Dashboard = () => {
       <Box mb={8}>
         <SectionHeader title="Recent Notifications" />
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} gap={{base:4, md:8}}>
-          <NotificationCard title="Water Supply Disruption" description="Planned maintenance on 10th April" />
-          <NotificationCard title="Local Market Cleanup" description="Volunteers needed this Saturday" />
+          {notificationState.slice(0,4).map((itm)=>{
+            return (
+              <NotificationCard title={itm.title} description={itm.description} />
+            )
+          })}
+          {/* <NotificationCard title="Local Market Cleanup" description="Volunteers needed this Saturday" /> */}
         </SimpleGrid>
         <Button mt={4} size="sm" variant="link" colorScheme="blue">View all</Button>
       </Box>
