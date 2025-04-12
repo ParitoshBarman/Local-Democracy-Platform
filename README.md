@@ -131,6 +131,38 @@ Allow CORS and correctly.
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Dashboard
+![Dashboard Screenshot](./screenshots/Screenshot\ \(115\).png)
+
+### 🔔 Notifications
+![Notifications Screenshot](./screenshots/Screenshot\ \(116\).png)
+
+### 📜 Laws
+![Laws Screenshot](./screenshots/Screenshot\ \(117\).png)
+
+### 🗳️ Voting
+![Voting Screenshot](./screenshots/Screenshot\ \(118\).png)
+
+### 💬 Feedback
+![Feedback Screenshot](./screenshots/Screenshot\ \(119\).png)
+
+### 📊 Impact
+![Impact Screenshot](./screenshots/Screenshot\ \(120\).png)
+
+### 🧑‍🤝‍🧑 Stories
+![Stories Screenshot](./screenshots/Screenshot\ \(121\).png)
+
+### 🌱 Initiatives
+![Initiatives Screenshot](./screenshots/Screenshot\ \(122\).png)
+
+### 🗂️ Voting Results
+![Voting Results Screenshot](./screenshots/Screenshot\ \(123\).png)
+
+
+---
+
 ## Author
 
 **Paritosh Barman**  
