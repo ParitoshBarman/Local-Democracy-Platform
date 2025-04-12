@@ -126,7 +126,7 @@ Allow CORS and correctly.
 
 ## Live Demo
 
-- **Frontend:** [local-democracy-platform.netlify.app](https://local-democracy-platform.netlify.app)
+- **Frontend:** [Netlify Deployment](https://local-democracy-platform.netlify.app)
 - **Backend (WebSocket):** [Render Deployment](https://local-democracy-platform.onrender.com)
 
 ---
@@ -137,7 +137,7 @@ Allow CORS and correctly.
 <img src="screenshots\Screenshot (116).png" alt="Dashboard Screenshot">
 
 ### 🔔 Notifications
-<img src="screenshots\Screenshot (117).png" alt="Notifications Screenshot"
+<img src="screenshots\Screenshot (117).png" alt="Notifications Screenshot">
 
 ### 📜 Laws
 <img src="screenshots\Screenshot (118).png" alt="Laws Screenshot">
@@ -155,10 +155,10 @@ Allow CORS and correctly.
 <img src="screenshots\Screenshot (122).png" alt="Stories Screenshot">
 
 ### 🌱 Initiatives
-<img src="screenshots\Screenshot (123).png" alt="Initiatives Screenshot"
+<img src="screenshots\Screenshot (123).png" alt="Initiatives Screenshot">
 
 ### 🗂️ Voting Results
-<img src="screenshots\Screenshot (124).png" alt="Voting Results Screenshot"
+<img src="screenshots\Screenshot (124).png" alt="Voting Results Screenshot">
 
 
 ---
