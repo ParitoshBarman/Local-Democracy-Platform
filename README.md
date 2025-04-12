@@ -139,6 +139,7 @@ Allow CORS correctly.
 
 - **Frontend:** [Netlify Deployment](https://local-democracy-platform.netlify.app)
 - **Backend (WebSocket):** [Render Deployment](https://local-democracy-platform.onrender.com)
+- **Video:** [Video Link](https://drive.google.com/file/d/1g-sNa-HbtS9PZqIehDzRT3V7smCz6j72/view?usp=drivesdk)
 
 ---
 
@@ -157,7 +158,7 @@ Allow CORS correctly.
 <img src="screenshots\Screenshot (119).png" alt="Voting Screenshot">
 
 ### 💬 Feedback
-<img src="screenshots\Screenshot (120).png" alt="Feedback Screenshot"
+<img src="screenshots\Screenshot (120).png" alt="Feedback Screenshot">
 
 ### 📊 Impact
 <img src="screenshots\Screenshot (121).png" alt="Impact Screenshot">
