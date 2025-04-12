@@ -119,6 +119,7 @@ git clone https://github.com/ParitoshBarman/Local-Democracy-Platform.git
 cd local_democracy_backend
 npm install
 node index.js
+    or
 npm run dev
 ```
 
@@ -127,11 +128,10 @@ npm run dev
 ```bash
 cd local_democracy_frontend
 npm install
-npm start
 npm run dev
 ```
 
-Allow CORS and correctly.
+Allow CORS correctly.
 
 ---
 
