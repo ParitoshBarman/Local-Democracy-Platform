@@ -9,6 +9,7 @@ import Impact from "../pages/Impact";
 import Stories from "../pages/Stories";
 import Initiatives from '../pages/Initiatives';
 import VotingPage from '../pages/VotingPage';
+import Test from './Test';
 
 const AllRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AllRouter = () => {
       <Route path="/stories" element={<Stories />} />
       <Route path="/initiatives" element={<Initiatives />} />
       <Route path="/voting-results" element={<VotingPage />} />
+      <Route path="/test" element={<Test />} />
     </Routes>    
   )
 }
