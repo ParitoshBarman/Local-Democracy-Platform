@@ -75,12 +75,12 @@ Local-Democracy-Platform/
 ├── local_democracy_frontend/
 │   ├── src/
 │   │   ├── components/
+│   │   │   ├── AllRouter.jsx
+│   │   │   ├── FilterBar.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── Nav.jsx
 │   │   │   ├── NotificationComponent.jsx
-│   │   │   ├── FeedbackForm.jsx
-│   │   │   ├── VotingPage.jsx
-│   │   │   ├── ImpactPage.jsx
-│   │   │   ├── StoriesPage.jsx
-│   │   │   ├── InitiativesPage.jsx
+│   │   │   ├── Sidebar.jsx
 |   |   ├── pages/
 |   |   |   ├── Dashboard.jsx
 |   |   |   ├── Feedback.jsx
