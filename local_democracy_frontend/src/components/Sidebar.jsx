@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Flex,
   Text,
@@ -16,6 +16,12 @@ const Sidebar = () => {
 
 
   const [navSize, changeNavSize] = useState(defaultNavSize || "large")
+
+  useEffect(() => {
+    if (defaultNavSize) {
+      changeNavSize(defaultNavSize);
+    }
+  }, [defaultNavSize]);
 
   return (
     <>
