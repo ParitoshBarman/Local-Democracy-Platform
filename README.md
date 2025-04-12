@@ -67,12 +67,12 @@ Citizens can view or start local initiatives like cleanliness drives, awareness 
 ## Folder Structure
 
 ```
-local-democracy/
+Local-Democracy-Platform/
 │
-├── backend/
+├── local_democracy_backend/
 │   └── index.js                  # Express server with WebSocket support
 │
-├── frontend/
+├── local_democracy_frontend/
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── NotificationComponent.jsx
@@ -81,11 +81,22 @@ local-democracy/
 │   │   │   ├── ImpactPage.jsx
 │   │   │   ├── StoriesPage.jsx
 │   │   │   ├── InitiativesPage.jsx
+|   |   ├── pages/
+|   |   |   ├── Dashboard.jsx
+|   |   |   ├── Feedback.jsx
+|   |   |   ├── Impact.jsx
+|   |   |   ├── Initiatives.jsx
+|   |   |   ├── Laws.jsx
+|   |   |   ├── Notifications.jsx
+|   |   |   ├── Stories.jsx
+|   |   |   ├── Voting.jsx
+|   |   |   ├── VotingPage.jsx
 │   │   ├── redux/
 │   │   │   ├── store.js
-│   │   │   ├── notificationsSlice.js
+│   │   │   ├── notificationsReducer.js
+│   │   ├── MainLayout.jsx
 │   │   ├── App.jsx
-│   │   ├── index.js
+│   │   ├── main.jsx
 │
 ├── public/
 │   └── index.html
