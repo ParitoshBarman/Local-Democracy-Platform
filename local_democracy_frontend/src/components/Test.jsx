@@ -5,7 +5,7 @@ function Test(){
     return (
         <div>
             This Test
-            <NotificationComponent/>
+            {/* <NotificationComponent/> */}
         </div>
     )
 }
