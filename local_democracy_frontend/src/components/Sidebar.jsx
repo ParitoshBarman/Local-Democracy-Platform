@@ -10,7 +10,13 @@ import {FiMenu} from 'react-icons/fi'
 import Nav from './Nav'
 
 const Sidebar = () => {
-  const [navSize, changeNavSize] = useState("large")
+  const defaultNavSize = useBreakpointValue({
+    base: "small", md: "large"
+  });
+
+
+  const [navSize, changeNavSize] = useState(defaultNavSize || "large")
+  
   return (
     <>
       <Flex
