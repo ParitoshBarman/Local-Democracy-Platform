@@ -1,7 +1,7 @@
 
 # Local Democracy Engagement Platform
 
-> **Hackathon Submission** by *Paritosh Barman* (Student at Masai School)
+> **Hackathon Submission** by *Paritosh Barman* (Student at Masai)
 
 A solo-built full-stack web application designed to **strengthen civic engagement** by making local government accessible, interactive, and impactful for citizens.
 
@@ -57,7 +57,7 @@ Citizens can view or start local initiatives like cleanliness drives, awareness 
 
 | Layer        | Tools Used                                                                 |
 |--------------|----------------------------------------------------------------------------|
-| **Frontend** | React.js, Chakra UI, Redux Toolkit, SCSS, React Router                     |
+| **Frontend** | React.js, Chakra UI, Redux Toolkit, React Router                     |
 | **Backend**  | Node.js, Express.js, Socket.IO                                             |
 | **State**    | Redux Toolkit                                                              |
 | **Deployment** | Netlify (Frontend), Render (Backend)                                   |
