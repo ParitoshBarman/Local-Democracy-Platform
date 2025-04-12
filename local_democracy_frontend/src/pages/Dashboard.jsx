@@ -19,7 +19,7 @@ import { FiBell, FiFileText, FiThumbsUp, FiActivity, FiUsers } from "react-icons
 const Dashboard = () => {
   const notificationState = useSelector((state)=>state.notification)
   return (
-    <Box p={6} bg={"gray.50"} minH="100vh">
+    <Box p={6} minH="100vh">
       {/* Welcome Section */}
       <VStack align="start" mb={6}>
         <Heading size="lg">Welcome back, Paritosh 👋</Heading>

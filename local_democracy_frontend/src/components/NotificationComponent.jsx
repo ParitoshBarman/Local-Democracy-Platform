@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { Toaster, toaster } from "./ui/toaster"
 import { useDispatch } from "react-redux";
 
-const socket = io("https://local-democracy-platform.onrender.com/"); // Replace with your backend URL if hosted
+const socket = io("https://local-democracy-platform.onrender.com/");
 
 const NotificationComponent = () => {
     const dispatch = useDispatch();

@@ -5,7 +5,6 @@ const Header = () => {
     <Box
       as="header"
       width="100%"
-      bg="white"
       px={6}
       py={3}
       boxShadow="sm"
