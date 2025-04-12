@@ -134,7 +134,7 @@ Allow CORS and correctly.
 ## 📸 Screenshots
 
 ### 🏠 Dashboard
-![Dashboard Screenshot](./screenshots/Screenshot (115).png)
+![Dashboard Screenshot](screenshots\Screenshot (116).png)
 
 ### 🔔 Notifications
 ![Notifications Screenshot](./screenshots/Screenshot (116).png)
