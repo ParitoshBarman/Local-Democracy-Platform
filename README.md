@@ -134,32 +134,31 @@ Allow CORS and correctly.
 ## 📸 Screenshots
 
 ### 🏠 Dashboard
-![Dashboard Screenshot](screenshots\Screenshot (116).png)
 <img src="screenshots\Screenshot (116).png" alt="Dashboard Screenshot">
 
 ### 🔔 Notifications
-![Notifications Screenshot](./screenshots/Screenshot (116).png)
+<img src="screenshots\Screenshot (117).png" alt="Notifications Screenshot"
 
 ### 📜 Laws
-![Laws Screenshot](./screenshots/Screenshot (117).png)
+<img src="screenshots\Screenshot (118).png" alt="Laws Screenshot">
 
 ### 🗳️ Voting
-![Voting Screenshot](./screenshots/Screenshot (118).png)
+<img src="screenshots\Screenshot (119).png" alt="Voting Screenshot">
 
 ### 💬 Feedback
-![Feedback Screenshot](./screenshots/Screenshot (119).png)
+<img src="screenshots\Screenshot (120).png" alt="Feedback Screenshot"
 
 ### 📊 Impact
-![Impact Screenshot](./screenshots/Screenshot (120).png)
+<img src="screenshots\Screenshot (121).png" alt="Impact Screenshot">
 
 ### 🧑‍🤝‍🧑 Stories
-![Stories Screenshot](./screenshots/Screenshot (121).png)
+<img src="screenshots\Screenshot (122).png" alt="Stories Screenshot">
 
 ### 🌱 Initiatives
-![Initiatives Screenshot](./screenshots/Screenshot (122).png)
+<img src="screenshots\Screenshot (123).png" alt="Initiatives Screenshot"
 
 ### 🗂️ Voting Results
-![Voting Results Screenshot](./screenshots/Screenshot (123).png)
+<img src="screenshots\Screenshot (124).png" alt="Voting Results Screenshot"
 
 
 ---
