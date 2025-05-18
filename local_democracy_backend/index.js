@@ -1,6 +1,7 @@
 const http = require("http");
 const app = require("./app");
 const { Server } = require("socket.io");
+const connectDB = require('./config/db');
 const notificationSocket = require("./sockets/notificationSocket");
 
 const server = http.createServer(app);
@@ -20,4 +21,5 @@ io.on("connection", (socket) => {
 const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
+  connectDB();
 });
