@@ -3,6 +3,15 @@ const app = require("./app");
 const { Server } = require("socket.io");
 const connectDB = require('./config/db');
 const notificationSocket = require("./sockets/notificationSocket");
+const { setSocketIOInstance } = require("./controllers/notificationController");
+const lawController = require("./controllers/lawController");
+const voteController = require("./controllers/voteController");
+const impactController = require("./controllers/impactController");
+const storyController = require('./controllers/storyController')
+const initiativeController = require('./controllers/initiativeController')
+
+
+
 
 const server = http.createServer(app);
 
@@ -13,10 +22,19 @@ const io = new Server(server, {
   },
 });
 
+
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
   notificationSocket(socket);  // Pass socket to your custom handler
 });
+
+setSocketIOInstance(io);
+lawController.setSocketIOInstance(io);
+voteController.setSocketIOInstance(io);
+impactController.setSocketIOInstance(io);
+storyController.setSocketIOInstance(io);
+initiativeController.setSocketIOInstance(io);
+
 
 const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
