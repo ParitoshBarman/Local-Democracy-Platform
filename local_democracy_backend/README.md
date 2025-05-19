@@ -45,8 +45,8 @@ This is the backend server for the **Local Democracy Platform**, a community-dri
 ## 📦 Installation
 
 ```bash
-git clone <repo link>
-cd backend folder
+git clone https://github.com/ParitoshBarman/Local-Democracy-Platform.git
+cd backend local_democracy_backend
 npm install
 ```
 
@@ -88,13 +88,13 @@ Base URL: `http://localhost:3001/api`
 |              | `/auth/logout`                  | `POST`     | ✅             |
 |              | `/auth/refresh-token`           | `POST`     | ❌             |
 |              | `/auth/me`                      | `GET`      | ✅             |
-| Laws         | `/laws`                         | `GET/POST/PATCH` | 🔒(write)      |
-| Votes        | `/votes`                        | `GET/POST/PATCH` | 🔒(write)      |
-| Impacts      | `/impacts`                      | `GET/POST/PATCH` | 🔒(write)      |
-| Initiatives  | `/initiatives`                  | `GET/POST/PATCH` | 🔒(write)      |
-| Feedbacks    | `/feedbacks`                    | `GET/POST/PATCH` | 🔒(read)       |
-| Stories      | `/stories`                      | `GET/POST/PATCH` | 🔒(write)      |
-| Notifications| `/notifications`                | `GET/POST/PATCH` | 🔒(write)      |
+| Laws         | `/laws`                         | `GET/POST/PATCH/DELETE` | 🔒(write)      |
+| Votes        | `/votes`                        | `GET/POST/PATCH/DELETE` | 🔒(write)      |
+| Impacts      | `/impacts`                      | `GET/POST/PATCH/DELETE` | 🔒(write)      |
+| Initiatives  | `/initiatives`                  | `GET/POST/PATCH/DELETE` | 🔒(write)      |
+| Feedbacks    | `/feedbacks`                    | `GET/POST/PATCH/DELETE` | 🔒(read)       |
+| Stories      | `/stories`                      | `GET/POST/PATCH/DELETE` | 🔒(write)      |
+| Notifications| `/notifications`                | `GET/POST/PATCH/DELETE` | 🔒(write)      |
 
 ---
 
