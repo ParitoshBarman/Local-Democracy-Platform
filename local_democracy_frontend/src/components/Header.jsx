@@ -1,7 +1,26 @@
 import { Box, Flex, Text, Spacer, Avatar, HStack, Menu, Portal } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { Toaster, toaster } from "./ui/toaster";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  return (
+  let userState = useSelector((state)=>state.user)
+  const navigate = useNavigate();
+  function handalLogout() {
+    localStorage.removeItem('accessToken')
+    localStorage.removeItem('refreshToken')
+    localStorage.removeItem('user')
+    toaster.create({
+      title: 'Successfully Logout!',
+      type: 'warning',
+      position: 'top-right',
+      duration: 3000,
+      isClosable: true,
+    })
+    navigate('/login');
+  }
+  return (<>
+    <Toaster />
     <Box
       as="header"
       width="100%"
@@ -21,35 +40,36 @@ const Header = () => {
 
         <HStack spacing={4}>
           <Text fontSize="md" fontWeight="medium" color="gray.700">
-            Hello, Paritosh Barman
+            Hello, {userState?.user?.name}
           </Text>
           <Menu.Root>
             <Menu.Trigger asChild>
               <Avatar.Root>
-                <Avatar.Fallback name="Paritosh Barman" />
-                <Avatar.Image src="https://bit.ly/sage-adebayo" />
+                <Avatar.Fallback name={userState?.user?.name} />
+                <Avatar.Image src={userState?.user?.profilePhoto} />
               </Avatar.Root>
             </Menu.Trigger>
             <Portal>
               <Menu.Positioner style={{ position: "absolute", top: "0px", right: "0px", zIndex: 1005 }}>
-                <Menu.Content style={{ position: "absolute", top: "0px", right: "0px", zIndex: 1005}}>
+                <Menu.Content style={{ position: "absolute", top: "0px", right: "0px", zIndex: 1005 }}>
                   <Menu.ItemGroup>
                     <Menu.ItemGroupLabel>More</Menu.ItemGroupLabel>
                     <Menu.Item>Profile</Menu.Item>
                   </Menu.ItemGroup>
                   <Menu.Separator />
                   <Menu.ItemGroup>
-                    <Menu.ItemGroupLabel>LogOut</Menu.ItemGroupLabel>
-                    
+                    <Menu.ItemGroupLabel onClick={handalLogout} style={{cursor:'pointer'}}>LogOut</Menu.ItemGroupLabel>
+
                   </Menu.ItemGroup>
                 </Menu.Content>
               </Menu.Positioner>
-              </Portal>
-            
+            </Portal>
+
           </Menu.Root>
         </HStack>
       </Flex>
     </Box>
+  </>
   );
 };
 

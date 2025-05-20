@@ -30,5 +30,8 @@ router.get("/admin-data", authMiddleware, roleMiddleware(["admin"]), (req, res) 
     res.json({ msg: "This is protected admin-only data." });
 });
 
+// verify User by access token
+router.post('/verify', authController.verifyUser);
+
 
 module.exports = router;

@@ -4,12 +4,14 @@ import {
   Text,
   IconButton,
   Avatar,
-  Heading, useBreakpointValue 
+  Heading, useBreakpointValue
 } from '@chakra-ui/react'
-import {FiMenu} from 'react-icons/fi'
+import { FiMenu } from 'react-icons/fi'
 import Nav from './Nav'
+import { useSelector } from 'react-redux'
 
 const Sidebar = () => {
+  let userState = useSelector((state)=>state.user)
   const defaultNavSize = useBreakpointValue({
     base: "small", md: "large"
   });
@@ -35,8 +37,8 @@ const Sidebar = () => {
         w={navSize == "small" ? "75px" : "200px"}
         flexDir="column"
         justifyContent="space-between"
-        onMouseEnter={()=>changeNavSize("large")}
-        onMouseLeave={()=>changeNavSize("small")}
+        onMouseEnter={() => changeNavSize("large")}
+        onMouseLeave={() => changeNavSize("small")}
       >
         <Flex
           p="5%"
@@ -60,8 +62,8 @@ const Sidebar = () => {
             <FiMenu color='black' />
           </IconButton>
 
-<Nav navSize={navSize}/>
-          
+          <Nav navSize={navSize} />
+
         </Flex>
 
         <Flex
@@ -74,8 +76,8 @@ const Sidebar = () => {
 
           <Flex mt={4} align="center">
             <Avatar.Root>
-              <Avatar.Fallback name="Paritosh Barman" />
-              <Avatar.Image src="https://bit.ly/sage-adebayo" />
+              <Avatar.Fallback name={userState?.user?.name} />
+              <Avatar.Image src={userState?.user?.profilePhoto} />
             </Avatar.Root>
             <Flex flexDir="column" ml={4} display={navSize == "small" ? "none" : "flex"}>
               <Heading as="h3" size="sm">Paritosh Barman</Heading>

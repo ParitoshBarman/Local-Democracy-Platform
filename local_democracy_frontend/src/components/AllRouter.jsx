@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Notifications from "../pages/Notifications";
 import Laws from "../pages/Laws";
@@ -9,22 +9,33 @@ import Impact from "../pages/Impact";
 import Stories from "../pages/Stories";
 import Initiatives from '../pages/Initiatives';
 import VotingPage from '../pages/VotingPage';
+import MainLayout from '../MainLayout';
 import Test from './Test';
+import Register from '../pages/RegisterPage';
+import Login from '../pages/LoginPage';
+import ProtectedRoute from './ProtectedRoute';
 
 const AllRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/notifications" element={<Notifications />} />
-      <Route path="/laws" element={<Laws />} />
-      <Route path="/voting" element={<Voting />} />
-      <Route path="/feedback" element={<Feedback />} />
-      <Route path="/impact" element={<Impact />} />
-      <Route path="/stories" element={<Stories />} />
-      <Route path="/initiatives" element={<Initiatives />} />
-      <Route path="/voting-results" element={<VotingPage />} />
-      <Route path="/test" element={<Test />} />
-    </Routes>    
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Navigate to={'/dashboard'} />} />
+
+      {/* Protected Routes */}
+      <Route element={<ProtectedRoute />}>
+        <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
+        <Route path="/notifications" element={<MainLayout><Notifications /></MainLayout>} />
+        <Route path="/laws" element={<MainLayout><Laws /></MainLayout>} />
+        <Route path="/voting" element={<MainLayout><Voting /></MainLayout>} />
+        <Route path="/feedback" element={<MainLayout><Feedback /></MainLayout>} />
+        <Route path="/impact" element={<MainLayout><Impact /></MainLayout>} />
+        <Route path="/stories" element={<MainLayout><Stories /></MainLayout>} />
+        <Route path="/initiatives" element={<MainLayout><Initiatives /></MainLayout>} />
+        <Route path="/voting-results" element={<MainLayout><VotingPage /></MainLayout>} />
+        <Route path="/test" element={<MainLayout><Test /></MainLayout>} />
+      </Route>
+    </Routes>
   )
 }
 

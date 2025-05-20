@@ -1,9 +1,11 @@
 import { createStore, legacy_createStore, combineReducers } from "redux";
 import notificationsReducer from "./notificationsReducer";
+import userReducer from "./userReducer";
 
 
 const rootReducer = combineReducers({
-    notification:notificationsReducer
+    notification:notificationsReducer,
+    user:userReducer
 })
 
 

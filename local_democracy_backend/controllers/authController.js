@@ -59,6 +59,7 @@ exports.loginUser = async (req, res) => {
         if (!user || !(await bcrypt.compare(password, user.password)))
             return res.status(400).json({ msg: "Invalid email or password" });
 
+
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
@@ -128,3 +129,24 @@ exports.logoutUser = async (req, res) => {
         res.status(500).json({ msg: "Logout failed", error: err.message });
     }
 };
+
+
+exports.verifyUser = async (req, res) => {
+    try {
+        const { accessToken } = req.body;
+        if (!accessToken) return res.status(401).json({ msg: "No token provided" });
+
+        const isBlacklisted = await Blacklist.findOne({ token: accessToken });
+        if (isBlacklisted)
+            return res.status(401).json({ msg: "Token is blacklisted. Please login again." });
+
+        const decoded = jwt.verify(accessToken, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.id).select("-password");
+        if (!user) return res.status(404).json({ msg: "User not found" });
+        res.status(200).json({ msg: "Verification Successfull", verifyStatus: true, user })
+
+    } catch (error) {
+        res.status(500).json({ msg: "Verification failed", verifyStatus: false, error: error.message });
+    }
+
+}

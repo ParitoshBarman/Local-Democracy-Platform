@@ -18,11 +18,13 @@ import { FiBell, FiFileText, FiThumbsUp, FiActivity, FiUsers } from "react-icons
 
 const Dashboard = () => {
   const notificationState = useSelector((state)=>state.notification)
+  const userState = useSelector((state)=>state.user)
+
   return (
     <Box p={6} minH="100vh">
       {/* Welcome Section */}
       <VStack align="start" mb={6}>
-        <Heading size="lg">Welcome back, Paritosh 👋</Heading>
+        <Heading size="lg">Welcome back, {userState?.user?.name.split(" ")[0]} 👋</Heading>
         <Text color="gray.500">Here’s what’s happening in your community today.</Text>
       </VStack>
 
@@ -37,9 +39,9 @@ const Dashboard = () => {
       <Box mb={8}>
         <SectionHeader title="Recent Notifications" />
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} gap={{base:4, md:8}}>
-          {notificationState.slice(0,4).map((itm)=>{
+          {notificationState.slice(0,4).map((itm, indx)=>{
             return (
-              <NotificationCard title={itm.title} description={itm.description} />
+              <NotificationCard title={itm.title} description={itm.description} key={indx} />
             )
           })}
           {/* <NotificationCard title="Local Market Cleanup" description="Volunteers needed this Saturday" /> */}
