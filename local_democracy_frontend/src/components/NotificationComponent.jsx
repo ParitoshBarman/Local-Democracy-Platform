@@ -4,8 +4,8 @@ import { io } from "socket.io-client";
 import { Toaster, toaster } from "./ui/toaster"
 import { useDispatch } from "react-redux";
 
-// const socket = io("https://local-democracy-platform.onrender.com/");
-const socket = io("http://localhost:3001");
+const socket = io("https://local-democracy-platform.onrender.com/");
+// const socket = io("http://localhost:3001");
 
 const NotificationComponent = () => {
     const dispatch = useDispatch();
