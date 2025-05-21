@@ -14,6 +14,9 @@ import Test from './Test';
 import Register from '../pages/RegisterPage';
 import Login from '../pages/LoginPage';
 import ProtectedRoute from './ProtectedRoute';
+import UploadLaw from '../pages/UploadLaw';
+import EditLaw from '../pages/EditLaw';
+import RoleBaseProtectedRoute from './RoleBaseProtectedRoute';
 
 const AllRouter = () => {
   return (
@@ -33,6 +36,8 @@ const AllRouter = () => {
         <Route path="/stories" element={<MainLayout><Stories /></MainLayout>} />
         <Route path="/initiatives" element={<MainLayout><Initiatives /></MainLayout>} />
         <Route path="/voting-results" element={<MainLayout><VotingPage /></MainLayout>} />
+        <Route path="/upload-law" element={<RoleBaseProtectedRoute role={['admin']}><MainLayout><UploadLaw /></MainLayout></RoleBaseProtectedRoute>} />
+        <Route path="/edit-law/:id" element={<RoleBaseProtectedRoute role={['admin']}><MainLayout><EditLaw /></MainLayout></RoleBaseProtectedRoute>} />
         <Route path="/test" element={<MainLayout><Test /></MainLayout>} />
       </Route>
     </Routes>

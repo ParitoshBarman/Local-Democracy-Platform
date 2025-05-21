@@ -3,20 +3,23 @@ import { Flex, Box, Link } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { Icon, Text } from "@chakra-ui/react";
 
-  import {
-    FiHome,
-    FiBell,
-    FiFileText,
-    FiThumbsUp,
-    FiMessageCircle,
-    FiBarChart2,
-    FiUsers,
-    FiCalendar,
-    FiPieChart
-  } from "react-icons/fi";
-  
+import {
+  FiHome,
+  FiBell,
+  FiFileText,
+  FiThumbsUp,
+  FiMessageCircle,
+  FiBarChart2,
+  FiUsers,
+  FiCalendar,
+  FiPieChart
+} from "react-icons/fi";
+import { useSelector } from "react-redux";
+
 
 const Nav = (props) => {
+  const userRole = useSelector((state) => state.user?.user?.role);
+
   const navLinks = [
     { icon: <FiHome />, path: "/", label: "Dashboard" },
     { icon: <FiBell />, path: "/notifications", label: "Notifications" },
@@ -27,6 +30,10 @@ const Nav = (props) => {
     { icon: <FiUsers />, path: "/stories", label: "Stories" },
     { icon: <FiCalendar />, path: "/initiatives", label: "Initiatives" },
     { icon: <FiPieChart />, path: "/voting-results", label: "Voting Results" },
+    ...(userRole === "admin" ? [
+      { icon: <FiFileText />, path: "/upload-law", label: "Upload Law" },
+      { icon: <FiThumbsUp />, path: "/upload-voting", label: "Upload Voting" }
+    ] : [])
   ];
 
   return (
@@ -48,7 +55,7 @@ const Nav = (props) => {
             _hover={{ textDecoration: "none", color: "blue.600" }}
             _activeLink={{ fontWeight: "bold", borderBottom: "2px solid white" }}
           >
-            <Icon>{link.icon}</Icon><Text display={props.navSize=="small"?"none":"block"}>{link.label}</Text>
+            <Icon>{link.icon}</Icon><Text display={props.navSize == "small" ? "none" : "block"}>{link.label}</Text>
           </Link>
         </Box>
       ))}

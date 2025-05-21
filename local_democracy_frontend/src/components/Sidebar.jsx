@@ -9,6 +9,7 @@ import {
 import { FiMenu } from 'react-icons/fi'
 import Nav from './Nav'
 import { useSelector } from 'react-redux'
+const IMAGE_BASE_URL = import.meta.env.VITE_API_IMAGE_URL;
 
 const Sidebar = () => {
   let userState = useSelector((state)=>state.user)
@@ -77,11 +78,11 @@ const Sidebar = () => {
           <Flex mt={4} align="center">
             <Avatar.Root>
               <Avatar.Fallback name={userState?.user?.name} />
-              <Avatar.Image src={userState?.user?.profilePhoto} />
+              <Avatar.Image src={`${IMAGE_BASE_URL}${userState?.user?.profilePhoto}`} />
             </Avatar.Root>
             <Flex flexDir="column" ml={4} display={navSize == "small" ? "none" : "flex"}>
-              <Heading as="h3" size="sm">Paritosh Barman</Heading>
-              <Text color="gray">User</Text>
+              <Heading as="h3" size="sm">{userState?.user?.name}</Heading>
+              <Text color="gray">{userState?.user?.role}</Text>
             </Flex>
           </Flex>
         </Flex>

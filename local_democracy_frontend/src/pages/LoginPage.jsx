@@ -100,7 +100,7 @@ const Login = () => {
                             />
                         </Field.Root>
 
-                        <Button type="submit" colorScheme="teal" width="full">
+                        <Button type="submit" colorPalette={'teal'} width="full">
                             Login
                         </Button>
                     </VStack>

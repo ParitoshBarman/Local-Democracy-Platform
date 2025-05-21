@@ -15,7 +15,7 @@ const createLaw = async (req, res) => {
         const { title, summary, status, date, category, link } = req.body;
 
         const newLaw = new Law({
-            ...req.body,
+            title, summary, status, date, category, link,
             postedBy: req.user._id,
         });
 
@@ -46,11 +46,14 @@ const createLaw = async (req, res) => {
 // Get all laws (optional filters via query)
 const getAllLaws = async (req, res) => {
     try {
-        const { category, status } = req.query;
+        const { category, status, search } = req.query;
 
         let filter = {};
         if (category) filter.category = category;
         if (status) filter.status = status;
+        if (search) {
+            filter.title = { $regex: search, $options: 'i' };
+        }
 
         const laws = await Law.find(filter)
             .sort({ createdAt: -1 })

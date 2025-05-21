@@ -5,6 +5,7 @@ import {
   Portal,
   createListCollection,
 } from "@chakra-ui/react";
+import { useEffect, useState, useRef } from "react";
 
 const categoryOptions = createListCollection({
   items: [
@@ -22,13 +23,41 @@ const statusOptions = createListCollection({
   ],
 });
 
-const FilterBar = () => {
+const FilterBar = ({ search_url, search_url_func, base_url }) => {
+  const searchInputRef = useRef(null);
+  const [category, setCategory] = useState('')
+  const [status, setStatus] = useState('')
+  const [search, setSearch] = useState('')
+
+  function categoryHandelChange(e) {
+    setCategory(e.target.value)
+  }
+  function statusHandelChange(e) {
+    setStatus(e.target.value)
+  }
+
+  let debuncingId;
+  function searchHandelChange() {
+    if (debuncingId) {
+      clearTimeout(debuncingId);
+    }
+
+    debuncingId = setTimeout(() => {
+      setSearch(searchInputRef.current.value)
+    }, 1000)
+  }
+
+
+  useEffect(() => {
+    search_url_func(`${base_url}?category=${category}&&status=${status}&&search=${search}`)
+  }, [category, status, search])
+
   return (
     <Stack direction={{ base: "column", md: "row" }} spacing={4} mb={6}>
-      <Input placeholder="Search proposals..." />
+      <Input placeholder="Search proposals..." onChange={searchHandelChange} ref={searchInputRef} />
 
       {/* Category Filter */}
-      <Select.Root collection={categoryOptions} size="sm" width="200px">
+      <Select.Root collection={categoryOptions} size="sm" width="200px" onChange={categoryHandelChange}>
         <Select.HiddenSelect />
         <Select.Label>Filter by Category</Select.Label>
         <Select.Control>
@@ -54,7 +83,7 @@ const FilterBar = () => {
       </Select.Root>
 
       {/* Status Filter */}
-      <Select.Root collection={statusOptions} size="sm" width="200px">
+      <Select.Root collection={statusOptions} size="sm" width="200px" onChange={statusHandelChange}>
         <Select.HiddenSelect />
         <Select.Label>Filter by Status</Select.Label>
         <Select.Control>

@@ -5,7 +5,7 @@ const User = require('../models/userModel')
 require('dotenv').config();
 
 const generateAccessToken = (user) => {
-    return jwt.sign({ id: user._id, email: user.email, role: user.role }, process.env.JWT_SECRET, { expiresIn: "15m" });
+    return jwt.sign({ id: user._id, email: user.email, role: user.role }, process.env.JWT_SECRET, { expiresIn: "3d" });
 };
 
 const generateRefreshToken = (user) => {

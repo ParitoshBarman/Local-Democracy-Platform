@@ -125,7 +125,7 @@ const Register = () => {
                             />
                         </Field.Root>
 
-                        <Button type="submit" colorScheme="teal" width="full">
+                        <Button type="submit" colorPalette={'teal'} width="full">
                             Register
                         </Button>
                     </VStack>

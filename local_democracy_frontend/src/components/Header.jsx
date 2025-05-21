@@ -2,6 +2,7 @@ import { Box, Flex, Text, Spacer, Avatar, HStack, Menu, Portal } from "@chakra-u
 import { useNavigate } from "react-router-dom";
 import { Toaster, toaster } from "./ui/toaster";
 import { useSelector } from "react-redux";
+const IMAGE_BASE_URL = import.meta.env.VITE_API_IMAGE_URL;
 
 const Header = () => {
   let userState = useSelector((state)=>state.user)
@@ -46,7 +47,7 @@ const Header = () => {
             <Menu.Trigger asChild>
               <Avatar.Root>
                 <Avatar.Fallback name={userState?.user?.name} />
-                <Avatar.Image src={userState?.user?.profilePhoto} />
+                <Avatar.Image src={`${IMAGE_BASE_URL}${userState?.user?.profilePhoto}`} />
               </Avatar.Root>
             </Menu.Trigger>
             <Portal>
