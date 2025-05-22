@@ -49,6 +49,69 @@ This is a fully functional role-based dashboard portal built using **React + Vit
 │   ├── main.jsx          # Entry point
 │   └── MainLayout.jsx    # Layout wrapper
 ```
+---
+```
+|____local_democracy_frontend
+| |____.env
+| |____.gitignore
+| |____dist
+| |____eslint.config.js
+| |____index.html
+| |____jsconfig.json
+| |____node_modules
+| |____package-lock.json
+| |____package.json
+| |____public
+| | |____vite.svg
+| | |_____redirects
+| |____README.md
+| |____src
+| | |____App.css
+| | |____App.jsx
+| | |____assets
+| | | |____react.svg
+| | |____components
+| | | |____AllRouter.jsx
+| | | |____FilterBar.jsx
+| | | |____Header.jsx
+| | | |____Nav.jsx
+| | | |____NotificationComponent.jsx
+| | | |____ProtectedRoute.jsx
+| | | |____RoleBaseDisplay.jsx
+| | | |____RoleBaseProtectedRoute.jsx
+| | | |____Sidebar.jsx
+| | | |____StoryDialog.jsx
+| | | |____Test.jsx
+| | | |____ui
+| | | | |____color-mode.jsx
+| | | | |____provider.jsx
+| | | | |____toaster.jsx
+| | | | |____tooltip.jsx
+| | | |____VotingDialog.jsx
+| | |____index.css
+| | |____main.jsx
+| | |____MainLayout.jsx
+| | |____pages
+| | | |____Dashboard.jsx
+| | | |____EditLaw.jsx
+| | | |____Feedback.jsx
+| | | |____Impact.jsx
+| | | |____Initiatives.jsx
+| | | |____Laws.jsx
+| | | |____LoginPage.jsx
+| | | |____Notifications.jsx
+| | | |____RegisterPage.jsx
+| | | |____Stories.jsx
+| | | |____UploadLaw.jsx
+| | | |____Voting.jsx
+| | | |____VotingPage.jsx
+| | |____redux
+| | | |____notificationsReducer.js
+| | | |____store.js
+| | | |____userReducer.js
+| |____vite.config.js
+|____README.md
+```
 
 ---
 
@@ -155,6 +218,7 @@ You can use the following credentials to log in and explore the application:
 ### 👤 Normal User
 - **Email:** moumita@gmail.com
 - **Password:** 123
+Moumita Roy is just for testing user with a demo profile image
 
 ### 🛠️ Admin User
 - **Email:** pariadmin@gmail.com

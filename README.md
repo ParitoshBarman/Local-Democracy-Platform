@@ -53,53 +53,153 @@ Citizens can view or start local initiatives like cleanliness drives, awareness 
 
 ---
 
-## Technology Stack
+### 🔐 Authentication & Roles  
+Secure access with user roles (Admin, Normal User) and protected routes based on permissions.
 
-| Layer        | Tools Used                                                                 |
-|--------------|----------------------------------------------------------------------------|
-| **Frontend** | React.js, Chakra UI, Redux Toolkit, React Router                     |
-| **Backend**  | Node.js, Express.js, Socket.IO                                             |
-| **State**    | Redux Toolkit                                                              |
-| **Deployment** | Netlify (Frontend), Render (Backend)                                   |
+- **Tech Stack:** `JWT`, `Role-based Middleware` (backend + frontend)
+- **Credentials for Testing:**
+  - 👤 **User**: `moumita@gmail.com` / `123`
+  - 🛠️ **Admin**: `pariadmin@gmail.com` / `123`
+
+
+
+## 🧰 Technology Stack
+
+| Layer           | Tools/Technologies Used                                                                 |
+|------------------|-----------------------------------------------------------------------------------------|
+| **Frontend**     | React.js, Chakra UI, Redux Toolkit, React Router, Vite, Axios                          |
+| **Backend**      | Node.js, Express.js, Socket.IO, Multer (for file uploads), JWT Auth                    |
+| **Database**     | MongoDB with Mongoose (used for relational-like references across models)              |
+| **State Management** | Redux Toolkit, React Context                                                       |
+| **Authentication** | JWT (JSON Web Tokens), Middleware-based Role Protection                              |
+| **Real-Time**     | Socket.IO for pushing notifications in real-time                                      |
+| **File Upload**   | Multer (in Node.js backend) + Local storage (uploads folder)                          |
+| **Styling**       | Chakra UI, Custom CSS                                                                 |
+| **Routing (Frontend)** | React Router DOM                                                               |
+| **Routing (Backend)** | Express Router (Modular routes: /auth, /laws, /votes, etc.)                      |
+| **Form Handling** | React Hook Form / Controlled Components                                               |
+| **Development Tools** | ESLint, Prettier, Vite, Nodemon, Postman                                          |
+| **Hosting & Deployment** | Netlify (Frontend), Render (Backend), MongoDB Atlas (Cloud DB)               |
+| **Version Control** | Git, GitHub                                                                          |
+| **Testing**        | Manual Testing with test credentials (admin/user)                                     |
+| **Security**       | CORS, Password Hashing (bcrypt)                                               |
 
 ---
 
 ## Folder Structure
 
 ```
-Local-Democracy-Platform/
-│
-├── local_democracy_backend/
-│   └── index.js                  # Express server with WebSocket support
-│
-├── local_democracy_frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── AllRouter.jsx
-│   │   │   ├── FilterBar.jsx
-│   │   │   ├── Header.jsx
-│   │   │   ├── Nav.jsx
-│   │   │   ├── NotificationComponent.jsx
-│   │   │   ├── Sidebar.jsx
-|   |   ├── pages/
-|   |   |   ├── Dashboard.jsx
-|   |   |   ├── Feedback.jsx
-|   |   |   ├── Impact.jsx
-|   |   |   ├── Initiatives.jsx
-|   |   |   ├── Laws.jsx
-|   |   |   ├── Notifications.jsx
-|   |   |   ├── Stories.jsx
-|   |   |   ├── Voting.jsx
-|   |   |   ├── VotingPage.jsx
-│   │   ├── redux/
-│   │   │   ├── store.js
-│   │   │   ├── notificationsReducer.js
-│   │   ├── MainLayout.jsx
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│
-├── ├── index.html
-
+|____local_democracy_backend
+| |____.env
+| |____.gitignore
+| |____app.js
+| |____config
+| | |____db.js
+| |____controllers
+| | |____authController.js
+| | |____feedbackController.js
+| | |____impactController.js
+| | |____initiativeController.js
+| | |____lawController.js
+| | |____notificationController.js
+| | |____storyController.js
+| | |____voteController.js
+| |____index.js
+| |____indexPast.js
+| |____middlewares
+| | |____authMiddleware.js
+| | |____roleMiddleware.js
+| | |____uploadMiddleware.js
+| |____models
+| | |____blacklistModel.js
+| | |____feedbackModel.js
+| | |____impactModel.js
+| | |____initiativeModel.js
+| | |____lawModel.js
+| | |____notificationModel.js
+| | |____storyModel.js
+| | |____userModel.js
+| | |____voteModel.js
+| |____node_modules
+| |____package-lock.json
+| |____package.json
+| |____README.md
+| |____routes
+| | |____authRoutes.js
+| | |____feedbackRoutes.js
+| | |____impactRoutes.js
+| | |____initiativeRoutes.js
+| | |____lawRoutes.js
+| | |____notificationRoutes.js
+| | |____storyRoutes.js
+| | |____voteRoutes.js
+| |____sockets
+| | |____notificationSocket.js
+| |____uploads
+| | |____1747741685633-Moumita Roy.jpeg
+| | |____1747742592518-Moumita Roy.jpeg
+| |____utils
+| | |____notificationData.js
+|____local_democracy_frontend
+| |____.env
+| |____.gitignore
+| |____dist
+| |____eslint.config.js
+| |____index.html
+| |____jsconfig.json
+| |____node_modules
+| |____package-lock.json
+| |____package.json
+| |____public
+| | |____vite.svg
+| | |_____redirects
+| |____README.md
+| |____src
+| | |____App.css
+| | |____App.jsx
+| | |____assets
+| | | |____react.svg
+| | |____components
+| | | |____AllRouter.jsx
+| | | |____FilterBar.jsx
+| | | |____Header.jsx
+| | | |____Nav.jsx
+| | | |____NotificationComponent.jsx
+| | | |____ProtectedRoute.jsx
+| | | |____RoleBaseDisplay.jsx
+| | | |____RoleBaseProtectedRoute.jsx
+| | | |____Sidebar.jsx
+| | | |____StoryDialog.jsx
+| | | |____Test.jsx
+| | | |____ui
+| | | | |____color-mode.jsx
+| | | | |____provider.jsx
+| | | | |____toaster.jsx
+| | | | |____tooltip.jsx
+| | | |____VotingDialog.jsx
+| | |____index.css
+| | |____main.jsx
+| | |____MainLayout.jsx
+| | |____pages
+| | | |____Dashboard.jsx
+| | | |____EditLaw.jsx
+| | | |____Feedback.jsx
+| | | |____Impact.jsx
+| | | |____Initiatives.jsx
+| | | |____Laws.jsx
+| | | |____LoginPage.jsx
+| | | |____Notifications.jsx
+| | | |____RegisterPage.jsx
+| | | |____Stories.jsx
+| | | |____UploadLaw.jsx
+| | | |____Voting.jsx
+| | | |____VotingPage.jsx
+| | |____redux
+| | | |____notificationsReducer.js
+| | | |____store.js
+| | | |____userReducer.js
+| |____vite.config.js
+|____README.md
 ```
 
 ---
@@ -143,34 +243,83 @@ Allow CORS correctly.
 
 ---
 
-## 📸 Screenshots
 
-### 🏠 Dashboard
-<img src="screenshots\Screenshot (116).png" alt="Dashboard Screenshot">
+## 🔐 Test Credentials
 
-### 🔔 Notifications
-<img src="screenshots\Screenshot (117).png" alt="Notifications Screenshot">
+You can use the following credentials to log in and explore the application:
 
-### 📜 Laws
-<img src="screenshots\Screenshot (118).png" alt="Laws Screenshot">
+### 👤 Normal User
+- **Email:** moumita@gmail.com
+- **Password:** 123
+Moumita Roy is just for testing user with a demo profile image
 
-### 🗳️ Voting
-<img src="screenshots\Screenshot (119).png" alt="Voting Screenshot">
+### 🛠️ Admin User
+- **Email:** pariadmin@gmail.com
+- **Password:** 123
 
-### 💬 Feedback
-<img src="screenshots\Screenshot (120).png" alt="Feedback Screenshot">
 
-### 📊 Impact
-<img src="screenshots\Screenshot (121).png" alt="Impact Screenshot">
+## 📷 Screenshots
 
-### 🧑‍🤝‍🧑 Stories
-<img src="screenshots\Screenshot (122).png" alt="Stories Screenshot">
+> Added some UI screenshots of:
+- Dashboard
+- Voting Dialog
+- Story Dialog
+- Notification Popup
+- Role-based route behavior
 
-### 🌱 Initiatives
-<img src="screenshots\Screenshot (123).png" alt="Initiatives Screenshot">
 
-### 🗂️ Voting Results
-<img src="screenshots\Screenshot (124).png" alt="Voting Results Screenshot">
+### 🧑‍💻 Normal User View
+
+---
+
+### 🔐 Log In Page  
+<img src="../screenshots/loginpage.png" alt="Login Screenshot" />
+
+### 📝 Register Page  
+<img src="../screenshots/register.png" alt="Register Screenshot" />
+
+### 🏠 Dashboard  
+<img src="../screenshots/Screenshot (180).png" alt="Dashboard Screenshot" />
+
+### 🔔 Notifications  
+<img src="../screenshots/Screenshot (181).png" alt="Notifications Screenshot" />
+
+### 📜 Laws  
+<img src="../screenshots/Screenshot (182).png" alt="Laws Screenshot" />
+
+### 🗳️ Voting  
+<img src="../screenshots/Screenshot (183).png" alt="Voting Screenshot" />
+
+### 💬 Feedback  
+<img src="../screenshots/Screenshot (184).png" alt="Feedback Screenshot" />
+
+### 📈 Impact  
+<img src="../screenshots/Screenshot (185).png" alt="Impact Screenshot" />
+
+### 🧾 Stories  
+<img src="../screenshots/Screenshot (186).png" alt="Stories Screenshot" />
+
+### 🌱 Initiatives  
+<img src="../screenshots/Screenshot (187).png" alt="Initiatives Screenshot" />
+
+### 👨‍🎨 Created By Section  
+<img src="../screenshots/createdBy.png" alt="Created By Screenshot" />
+
+---
+
+### 🛡️ Admin View – Extra Features
+
+---
+
+### 📋 Admin Sidebar  
+<img src="../screenshots/AdminSidebar.png" alt="Admin Sidebar Screenshot" />
+
+### ✏️ Create, Edit & Delete Options  
+<img src="../screenshots/createEditandDeletOption.png" alt="Create Edit And Delete Option Screenshot" />
+
+### 🗳️ Vote Creation Panel  
+<img src="../screenshots/VoteCreateOption.png" alt="Vote Create Screenshot" />
+
 
 
 ---

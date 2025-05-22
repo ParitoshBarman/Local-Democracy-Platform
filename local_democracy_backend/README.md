@@ -39,7 +39,60 @@ This is the backend server for the **Local Democracy Platform**, a community-dri
 │   └── notificationSocket.js
 └── uploads/                # Uploaded files (profile images)
 ```
-
+---
+```
+|____local_democracy_backend
+| |____.env
+| |____.gitignore
+| |____app.js
+| |____config
+| | |____db.js
+| |____controllers
+| | |____authController.js
+| | |____feedbackController.js
+| | |____impactController.js
+| | |____initiativeController.js
+| | |____lawController.js
+| | |____notificationController.js
+| | |____storyController.js
+| | |____voteController.js
+| |____index.js
+| |____indexPast.js
+| |____middlewares
+| | |____authMiddleware.js
+| | |____roleMiddleware.js
+| | |____uploadMiddleware.js
+| |____models
+| | |____blacklistModel.js
+| | |____feedbackModel.js
+| | |____impactModel.js
+| | |____initiativeModel.js
+| | |____lawModel.js
+| | |____notificationModel.js
+| | |____storyModel.js
+| | |____userModel.js
+| | |____voteModel.js
+| |____node_modules
+| |____package-lock.json
+| |____package.json
+| |____README.md
+| |____routes
+| | |____authRoutes.js
+| | |____feedbackRoutes.js
+| | |____impactRoutes.js
+| | |____initiativeRoutes.js
+| | |____lawRoutes.js
+| | |____notificationRoutes.js
+| | |____storyRoutes.js
+| | |____voteRoutes.js
+| |____sockets
+| | |____notificationSocket.js
+| |____uploads
+| | |____1747741685633-Moumita Roy.jpeg
+| | |____1747742592518-Moumita Roy.jpeg
+| |____utils
+| | |____notificationData.js
+```
 ---
 
 ## 📦 Installation
