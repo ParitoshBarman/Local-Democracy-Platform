@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Notifications from "../pages/Notifications";
 import Laws from "../pages/Laws";
-import Voting from "../pages/Voting";
 import Feedback from "../pages/Feedback";
 import Impact from "../pages/Impact";
 import Stories from "../pages/Stories";
@@ -30,12 +29,11 @@ const AllRouter = () => {
         <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
         <Route path="/notifications" element={<MainLayout><Notifications /></MainLayout>} />
         <Route path="/laws" element={<MainLayout><Laws /></MainLayout>} />
-        <Route path="/voting" element={<MainLayout><Voting /></MainLayout>} />
         <Route path="/feedback" element={<MainLayout><Feedback /></MainLayout>} />
         <Route path="/impact" element={<MainLayout><Impact /></MainLayout>} />
         <Route path="/stories" element={<MainLayout><Stories /></MainLayout>} />
         <Route path="/initiatives" element={<MainLayout><Initiatives /></MainLayout>} />
-        <Route path="/voting-results" element={<MainLayout><VotingPage /></MainLayout>} />
+        <Route path="/voting" element={<MainLayout><VotingPage /></MainLayout>} />
         <Route path="/upload-law" element={<RoleBaseProtectedRoute role={['admin']}><MainLayout><UploadLaw /></MainLayout></RoleBaseProtectedRoute>} />
         <Route path="/edit-law/:id" element={<RoleBaseProtectedRoute role={['admin']}><MainLayout><EditLaw /></MainLayout></RoleBaseProtectedRoute>} />
         <Route path="/test" element={<MainLayout><Test /></MainLayout>} />

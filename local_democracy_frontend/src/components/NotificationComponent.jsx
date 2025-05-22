@@ -4,7 +4,10 @@ import { io } from "socket.io-client";
 import { Toaster, toaster } from "./ui/toaster"
 import { useDispatch } from "react-redux";
 
-const socket = io("https://local-democracy-platform.onrender.com/");
+const NOTIFICATION_SOCKET_URL = import.meta.env.VITE_API_NOTIFICATION_SOCKET_URL;
+
+const socket = io(NOTIFICATION_SOCKET_URL);
+// const socket = io("https://local-democracy-platform.onrender.com/");
 // const socket = io("http://localhost:3001");
 
 const NotificationComponent = () => {

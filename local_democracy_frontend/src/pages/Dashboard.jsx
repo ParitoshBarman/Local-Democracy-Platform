@@ -36,7 +36,7 @@ const Dashboard = () => {
       </SimpleGrid>
 
       {/* Recent Notifications */}
-      <Box mb={8}>
+      <Box mb={8} as={'a'} href="/notifications">
         <SectionHeader title="Recent Notifications" />
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} gap={{base:4, md:8}}>
           {notificationState.slice(0,4).map((itm, indx)=>{
@@ -77,7 +77,7 @@ const Dashboard = () => {
       </Box>
 
       {/* Community Stories */}
-      <Box>
+      <Box as={'a'} href="/stories">
         <SectionHeader title="Community Stories" />
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} gap={{base:4, md:8}}>
           <StoryCard name="Aarav S." story="Led a neighborhood cleanup drive last Sunday." />
@@ -119,7 +119,7 @@ const ProposalCard = ({ title, votes }) => (
   <Box p={4} bg="white" rounded="md" shadow="sm">
     <Text fontWeight="bold">{title}</Text>
     <Text fontSize="sm" mt={1} color="gray.500">{votes} community votes</Text>
-    <Button mt={2} size="sm" colorScheme="blue">View & Vote</Button>
+    <Button mt={2} size="sm" colorScheme="blue" as={'a'} href="/voting">View & Vote</Button>
   </Box>
 );
 

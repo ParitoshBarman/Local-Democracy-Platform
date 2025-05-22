@@ -25,14 +25,13 @@ const Nav = (props) => {
     { icon: <FiBell />, path: "/notifications", label: "Notifications" },
     { icon: <FiFileText />, path: "/laws", label: "Laws" },
     { icon: <FiThumbsUp />, path: "/voting", label: "Voting" },
+    { icon: <FiUsers />, path: "/stories", label: "Stories" },
     { icon: <FiMessageCircle />, path: "/feedback", label: "Feedback" },
     { icon: <FiBarChart2 />, path: "/impact", label: "Impact" },
-    { icon: <FiUsers />, path: "/stories", label: "Stories" },
     { icon: <FiCalendar />, path: "/initiatives", label: "Initiatives" },
-    { icon: <FiPieChart />, path: "/voting-results", label: "Voting Results" },
     ...(userRole === "admin" ? [
       { icon: <FiFileText />, path: "/upload-law", label: "Upload Law" },
-      { icon: <FiThumbsUp />, path: "/upload-voting", label: "Upload Voting" }
+      // { icon: <FiThumbsUp />, path: "/upload-voting", label: "Upload Voting" }
     ] : [])
   ];
 

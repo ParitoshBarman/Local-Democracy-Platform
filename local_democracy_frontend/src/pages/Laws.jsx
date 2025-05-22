@@ -20,7 +20,7 @@ import axios from "axios";
 import RoleBaseDisplay from "../components/RoleBaseDisplay";
 import { useSelector } from "react-redux";
 import { Toaster, toaster } from "../components/ui/toaster"
-import { Link } from "react-router-dom";
+import { FaPlus } from "react-icons/fa6";
 
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -74,7 +74,12 @@ export default function Laws() {
     <>
       <Toaster />
       <Box p={6}>
-        <Heading size="lg" mb={4}>Local Laws & Proposals</Heading>
+        <Stack direction={'row'} justifyContent={"space-between"}>
+          <Heading size="lg" mb={4}>Local Laws & Proposals</Heading>
+          <RoleBaseDisplay role={['admin']}>
+            <Button variant="outline" colorPalette={'red'} as={'a'} href={'/upload-law'}>Create Law <FaPlus /></Button>
+          </RoleBaseDisplay>
+        </Stack>
 
         {/* Search & Filter Section */}
         <Stack direction={{ base: "column", md: "row" }} spacing={4} mb={6}>

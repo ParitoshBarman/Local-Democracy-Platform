@@ -19,7 +19,7 @@ const voteSchema = new mongoose.Schema(
     status: {
       type: String,
       enum: ["Upcoming", "Ongoing", "Closed"],
-      default: "Upcoming",
+      default: "Ongoing",
     },
     votes: {
       up: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }], // user IDs who upvoted

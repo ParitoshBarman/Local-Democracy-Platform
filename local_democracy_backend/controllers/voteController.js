@@ -49,11 +49,13 @@ const createVote = async (req, res) => {
 // Get all votes with optional filters
 const getAllVotes = async (req, res) => {
   try {
-    const { category, status } = req.query;
+    const { category, search } = req.query;
 
     let filter = {};
     if (category) filter.category = category;
-    if (status) filter.status = status;
+    if (search) {
+      filter.title = { $regex: search, $options: 'i' };
+    }
 
     const votes = await Vote.find(filter)
       .sort({ createdAt: -1 })

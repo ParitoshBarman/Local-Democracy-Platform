@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   Heading,
@@ -9,60 +7,45 @@ import {
   Avatar,
   Badge,
 } from "@chakra-ui/react";
+import StoryDialog from "../components/StoryDialog";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const storiesData = [
-  {
-    id: 1,
-    title: "Reviving a Local Lake",
-    description:
-      "How a group of residents came together to clean and restore a polluted lake in their neighborhood.",
-    author: "Anjali Sharma",
-    date: "March 28, 2025",
-    tag: "Environment",
-  },
-  {
-    id: 2,
-    title: "From Streets to School",
-    description:
-      "A heartwarming journey of a child who got access to education through a local NGO's effort.",
-    author: "Ramesh Verma",
-    date: "March 10, 2025",
-    tag: "Education",
-  },
-  {
-    id: 3,
-    title: "Creating a Safer Market",
-    description:
-      "Vendors and citizens collaborated to install lights and set safety guidelines in a crowded market.",
-    author: "Sneha Kulkarni",
-    date: "February 14, 2025",
-    tag: "Safety",
-  },
-  {
-    id: 4,
-    title: "Community Garden Project",
-    description:
-      "Vacant land turned into a green space, boosting food security and togetherness.",
-    author: "Vikram Singh",
-    date: "January 22, 2025",
-    tag: "Sustainability",
-  },
-];
+const API_URL = import.meta.env.VITE_API_BASE_URL;
+const IMAGE_BASE_URL = import.meta.env.VITE_API_IMAGE_URL;
+
 
 const Stories = () => {
+  const [storiesData, setstoriesData] = useState([]);
+  const [searchUrl, setSearchUrl] = useState(`${API_URL}/stories`)
+  const [refreshTegger, setrefreshTegger] = useState(0)
+
+  useEffect(() => {
+    axios.get(searchUrl)
+      .then((res) => {
+        setstoriesData(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [searchUrl, refreshTegger]);
+
   return (
     <Box p={6}>
-      <Heading size="lg" mb={2}>
-        Community Stories
-      </Heading>
+      <Stack direction={'row'} justifyContent={"space-between"}>
+        <Heading size="lg" mb={2}>
+          Community Stories
+        </Heading>
+        <StoryDialog setrefreshTegger={setrefreshTegger} />
+      </Stack>
       <Text mb={6} color="gray.600">
         Inspiring stories of change and community-driven success.
       </Text>
 
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} gap={{base:4, md:8}}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} gap={{ base: 4, md: 8 }}>
         {storiesData.map((story) => (
           <Box
-            key={story.id}
+            key={story._id}
             borderWidth="1px"
             borderRadius="lg"
             boxShadow="md"
@@ -77,20 +60,28 @@ const Stories = () => {
               <Stack direction="row" align="center" spacing={3} mt={2}>
                 {/* <Avatar name={story.author} size="sm" /> */}
                 <Avatar.Root>
-                  <Avatar.Fallback name={story.author} />
-                  {/* <Avatar.Image src="https://bit.ly/sage-adebayo" /> */}
+                  <Avatar.Fallback name={story.author.name} />
+                  <Avatar.Image src={`${IMAGE_BASE_URL}${story.author.profilePhoto}`} />
                 </Avatar.Root>
                 <Text fontSize="sm" fontWeight="medium">
-                  {story.author}
+                  {story.author.name}
                 </Text>
                 <Text fontSize="sm" color="gray.500">
-                  {story.date}
+                  {new Date(story.date).toISOString().split('T')[0]}
                 </Text>
               </Stack>
 
-              <Badge colorScheme="purple" w="fit-content">
-                {story.tag}
-              </Badge>
+              <Stack direction={"row"}>
+
+                {story.tag.map((itm, indx) => {
+                  return (
+                    <Badge colorScheme="purple" w="fit-content" key={indx}>
+                      {itm}
+                    </Badge>
+                  )
+                })}
+              </Stack>
+
             </Stack>
           </Box>
         ))}
