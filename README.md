@@ -239,7 +239,9 @@ Allow CORS correctly.
 
 - **Frontend:** [Netlify Deployment](https://local-democracy-platform.netlify.app)
 - **Backend (WebSocket):** [Render Deployment](https://local-democracy-platform.onrender.com)
-- **Video:** [Video Link](https://drive.google.com/file/d/1g-sNa-HbtS9PZqIehDzRT3V7smCz6j72/view?usp=drivesdk)
+- **Backend (WebSocket):** [Frontend GitHub Link](https://github.com/ParitoshBarman/Local-Democracy-Platform/tree/master/local_democracy_frontend)
+- **Backend (WebSocket):** [Backend GitHub Link](https://github.com/ParitoshBarman/Local-Democracy-Platform/tree/master/local_democracy_backend)
+<!-- - **Video:** [Video Link](https://drive.google.com/file/d/1g-sNa-HbtS9PZqIehDzRT3V7smCz6j72/view?usp=drivesdk) -->
 
 ---
 
