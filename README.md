@@ -273,37 +273,37 @@ Moumita Roy is just for testing user with a demo profile image
 ---
 
 ### 🔐 Log In Page  
-<img src="../screenshots/loginpage.png" alt="Login Screenshot" />
+<img src="screenshots/loginpage.png" alt="Login Screenshot" />
 
 ### 📝 Register Page  
-<img src="../screenshots/register.png" alt="Register Screenshot" />
+<img src="screenshots/register.png" alt="Register Screenshot" />
 
 ### 🏠 Dashboard  
-<img src="../screenshots/Screenshot (180).png" alt="Dashboard Screenshot" />
+<img src="screenshots/Screenshot (180).png" alt="Dashboard Screenshot" />
 
 ### 🔔 Notifications  
-<img src="../screenshots/Screenshot (181).png" alt="Notifications Screenshot" />
+<img src="screenshots/Screenshot (181).png" alt="Notifications Screenshot" />
 
 ### 📜 Laws  
-<img src="../screenshots/Screenshot (182).png" alt="Laws Screenshot" />
+<img src="screenshots/Screenshot (182).png" alt="Laws Screenshot" />
 
 ### 🗳️ Voting  
-<img src="../screenshots/Screenshot (183).png" alt="Voting Screenshot" />
+<img src="screenshots/Screenshot (183).png" alt="Voting Screenshot" />
 
 ### 💬 Feedback  
-<img src="../screenshots/Screenshot (184).png" alt="Feedback Screenshot" />
+<img src="screenshots/Screenshot (184).png" alt="Feedback Screenshot" />
 
 ### 📈 Impact  
-<img src="../screenshots/Screenshot (185).png" alt="Impact Screenshot" />
+<img src="screenshots/Screenshot (185).png" alt="Impact Screenshot" />
 
 ### 🧾 Stories  
-<img src="../screenshots/Screenshot (186).png" alt="Stories Screenshot" />
+<img src="screenshots/Screenshot (186).png" alt="Stories Screenshot" />
 
 ### 🌱 Initiatives  
-<img src="../screenshots/Screenshot (187).png" alt="Initiatives Screenshot" />
+<img src="screenshots/Screenshot (187).png" alt="Initiatives Screenshot" />
 
 ### 👨‍🎨 Created By Section  
-<img src="../screenshots/createdBy.png" alt="Created By Screenshot" />
+<img src="screenshots/createdBy.png" alt="Created By Screenshot" />
 
 ---
 
@@ -312,13 +312,13 @@ Moumita Roy is just for testing user with a demo profile image
 ---
 
 ### 📋 Admin Sidebar  
-<img src="../screenshots/AdminSidebar.png" alt="Admin Sidebar Screenshot" />
+<img src="screenshots/AdminSidebar.png" alt="Admin Sidebar Screenshot" />
 
 ### ✏️ Create, Edit & Delete Options  
-<img src="../screenshots/createEditandDeletOption.png" alt="Create Edit And Delete Option Screenshot" />
+<img src="screenshots/createEditandDeletOption.png" alt="Create Edit And Delete Option Screenshot" />
 
 ### 🗳️ Vote Creation Panel  
-<img src="../screenshots/VoteCreateOption.png" alt="Vote Create Screenshot" />
+<img src="screenshots/VoteCreateOption.png" alt="Vote Create Screenshot" />
 
 
 
