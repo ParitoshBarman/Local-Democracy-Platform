@@ -1,7 +1,7 @@
 
 # Local Democracy Engagement Platform
 
-> **Hackathon Submission** by *Paritosh Barman* (Student at Masai)
+> **Submission** by *Paritosh Barman*
 
 A solo-built full-stack web application designed to **strengthen civic engagement** by making local government accessible, interactive, and impactful for citizens.
 
